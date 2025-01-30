@@ -10,11 +10,12 @@ function getStringAfterEquals(inputString) {
 async function readBuildFile(branchName) {
   if (!branchName) return;
   const url = `https://api.github.com/repos/ondc-official/ONDC-FIS-Specifications/contents/ui/build.js?ref=${branchName}`;
-
+  
   try {
     const response = await fetch(url, {
       headers: {
         Authorization: "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",
+        // "Accept": "application/vnd.github+json",
       },
     });
     const formattedResponse = await response?.json();
